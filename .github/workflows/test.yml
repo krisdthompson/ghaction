@@ -20,7 +20,7 @@ jobs:
       job_var: ${{ vars.job_var }}
     steps:
       - name: inspect github.event
-        run: echo ${{ toJson(github.event) }}
+        run: echo ${{ github.event }}
       - name: Echo environment variables
         env:
           step_var: ${{ vars.step_var }}
