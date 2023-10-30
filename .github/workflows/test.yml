@@ -23,6 +23,6 @@ jobs:
           step_var: ${{ vars.step_var }}
         run: |
           echo env
-          echo "workflow_var: $workflow_var
+          echo "workflow_var: $workflow_var"
           echo "job_var: $job_var"
           echo "step_var: $step_var"
