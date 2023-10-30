@@ -15,13 +15,13 @@ env:
 jobs:
   check-env:
     runs-on: ubuntu-latest
-    environment: ${{ github.event.inputs.env_to_promote_to }}
+    environment: ${{ github.event.inputs.environment }}
     env:
       job_var: ${{ vars.job_var }}
     steps:
-      - name: Dump GitHub context
-        id: github_context_step
-        run: echo '${{ toJSON(github) }}'
+      # - name: Dump GitHub context
+      #   id: github_context_step
+      #   run: echo '${{ toJSON(github) }}'
       - name: Echo environment variables
         env:
           step_var: ${{ vars.step_var }}
