@@ -15,6 +15,7 @@ env:
 jobs:
   check-env:
     runs-on: ubuntu-latest
+    environment: sand
     env:
       job_var: ${{ vars.job_var }}
     steps:
