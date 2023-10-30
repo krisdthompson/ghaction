@@ -15,10 +15,12 @@ env:
 jobs:
   check-env:
     runs-on: ubuntu-latest
-    environment: sand
+    environment: ${{ github.event.inputs.env_to_promote_to }}
     env:
       job_var: ${{ vars.job_var }}
     steps:
+      - name: inspect github.event
+        run: echo: ${{ toJson(github.event) }}
       - name: Echo environment variables
         env:
           step_var: ${{ vars.step_var }}
