@@ -1,0 +1,27 @@
+name: Terraform Azure VM for RAN-Connect PoC
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to Deploy'
+        type: environment
+        required: true
+        default: 'SAND'
+
+env:
+  workflow_var: ${{ vars.workflow_var }}
+
+jobs:
+  check-env:
+    runs-on: ubuntu-latest
+    env:
+      job_var: ${{ vars.job_var }}
+    steps:
+      - name: Echo environment variables
+        env:
+          step_var: ${{ vars.step_var }}
+        run: |
+          echo "workflow_var: $workflow_var
+          echo "job_var: $job_var"
+          echo "step_var: $step_var
