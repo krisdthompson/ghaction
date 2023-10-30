@@ -19,8 +19,9 @@ jobs:
     env:
       job_var: ${{ vars.job_var }}
     steps:
-      - name: inspect github.event
-        run: echo ${{ github.event }}
+      - name: Dump GitHub context
+        id: github_context_step
+        run: echo '${{ toJSON(github) }}'
       - name: Echo environment variables
         env:
           step_var: ${{ vars.step_var }}
